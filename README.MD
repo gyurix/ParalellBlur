@@ -6,7 +6,11 @@
 
 This application applies a blur effect to a 4K image in.bmp by calculating the average color of every
 pixel in a 5 block rectangular range around the changeable pixel (total 11 x 11 = 121 pixels average color
-is calculated for determining the color of one pixel)
+is calculated for determining the color of one pixel).
+
+## Paralelization
+
+After the image is loaded for speeding up the calculation of this blur effect the image can be divided into several equal sized parts. Each parts pixels can be calculated separately and paralelly. In the end the main thread needs to write the result image to the **out.bmp** file
 
 ## Testing
 
